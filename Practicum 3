@@ -1,0 +1,75 @@
+class DateClass
+    {
+        private DateTime data;
+        public DateClass()
+        {
+            data = DateTime.Now;
+        }
+
+        public DateClass(int year, int mounth, int day)
+        {
+            data = new DateTime(year, mounth, day);
+        }
+
+        public DateTime Date
+        {
+            get { return data; }
+            set { data = value; }
+        }
+
+        public DateTime GetPreviusDay()
+        {
+            return data.AddDays(-1);
+        }
+
+        public DateTime GetNextDay()
+        {
+            return data.AddDays(1);
+        }
+
+        public int DaysUnitilEndOfMonth()
+        {
+            DateTime endOfMonth = new DateTime(data.Year, data.Month, DateTime.DaysInMonth(data.Year, data.Month));
+            return (endOfMonth - data).Days;
+        }
+
+static void Main(string[] args)
+        {
+            //Задание-1
+            //Console.WriteLine("Введите год: ");
+            //int year = int.Parse(Console.ReadLine());
+            //Console.WriteLine("Введите месяц: ");
+            //int month = int.Parse(Console.ReadLine());
+            //Console.WriteLine("Введите день: ");
+            //int day = int.Parse(Console.ReadLine());
+            //DateClass dataObject = new DateClass(year, month, day);
+
+            //Console.WriteLine($"Сегодняшняя дата: {dataObject.Date:d}");
+            //Console.WriteLine($"Предыдущий день: {dataObject.GetPreviusDay():d}");
+            //Console.WriteLine($"Следующий день: {dataObject.GetNextDay():d}");
+            //Console.WriteLine($"Дней до окончания месяца: {dataObject.DaysUnitilEndOfMonth()}");
+
+            //Задание-2
+            //Console.WriteLine("Ввести первую дату: ");
+            //DateTime date = DateTime.Parse(Console.ReadLine());
+            //Console.WriteLine("Ввести вторую дату: ");
+            //DateTime date1 = DateTime.Parse(Console.ReadLine());
+            //TimeSpan span = date1 - date;
+            //int DaysBetween = span.Days;
+            //Console.WriteLine($"Количество дней между {date:d} и {date1:d}: \n{DaysBetween:d}");
+
+            //Задание3
+            //Console.WriteLine("Введите время начала первой процедуры: ");
+            //DateTime time = DateTime.Parse(Console.ReadLine());
+            //Console.WriteLine($"Первая процедура начинается в {time:HH, mm, ss}");
+
+            //Console.WriteLine("Введите время начала следующей процедуры: ");
+            //DateTime time1 = DateTime.Parse(Console.ReadLine());
+            //Console.WriteLine($"Вторая процедура начинается в {time1:HH, mm, ss}");
+
+            //Console.WriteLine("Введите общее количество процедур: ");
+            //int proced = int.Parse(Console.ReadLine());
+            //Console.WriteLine($"Общее количество процедур которое вам нужно выполнить: {proced}");
+
+
+            //Console.ReadKey();
